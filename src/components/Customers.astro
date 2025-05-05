@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import arancelImage from '../assets/images/arancel.png';
+import garferImage from '../assets/images/garfer.png';
+import odataImage from '../assets/images/odata.svg';
+
+---
+<section class="py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+      Nuestros Clientes
+    </h2>
+  </div>
+
+  <div class="flex flex-wrap items-center justify-between">
+    <Image src={arancelImage} alt="Arancel" height={90} class="filter brightness-0 invert" />
+    <Image src={garferImage} alt="Garfer" height={100} class="filter brightness-0 invert" />
+    <Image src={odataImage} alt="Odata" height={80} class="filter brightness-0 invert" />
+  </div>
+</section>
