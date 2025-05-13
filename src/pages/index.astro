@@ -1,11 +1,65 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Navigation from '../components/Navigation.astro';
+import Services from '../components/Services.astro';
+import Customers from '../components/Customers.astro';
+import About from '../components/About.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
-	<Welcome />
+	<div
+		class='relative z-10 max-w-screen-xl mx-auto'
+	>
+		<Navigation />
+		<Hero />
+		<Services />
+		<Customers />
+		<About />
+	</div>
+	
 </Layout>
+
+<style is:global>
+	main {
+		height: 100%;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+	}
+
+	@keyframes glow {
+		0%, 100% {
+			filter: drop-shadow(0 0 6px rgba(163, 230, 53, 0.5));
+		}
+		50% {
+			filter: drop-shadow(0 0 12px rgba(163, 230, 53, 0.8));
+		}
+	}
+
+	.animate-glow {
+		animation: glow 4s infinite ease-in-out;
+	}
+
+	nav ul li a {
+		position: relative;
+		padding-bottom: 0.25rem;
+	}
+
+	nav ul li a::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(to right, #d2f95e, #d2f95e);
+		background-color: white;
+		transition: width 0.3s ease-in-out;
+	}
+
+	nav ul li a:hover::after {
+		width: 100%;
+	}
+</style>
